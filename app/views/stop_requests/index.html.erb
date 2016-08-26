@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Stop Requests</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @stop_requests.each do |stop_request| %>
+      <tr>
+        <td><%= link_to 'Show', stop_request %></td>
+        <td><%= link_to 'Edit', edit_stop_request_path(stop_request) %></td>
+        <td><%= link_to 'Destroy', stop_request, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Stop request', new_stop_request_path %>
