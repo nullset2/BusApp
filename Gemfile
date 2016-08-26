@@ -12,6 +12,7 @@ gem 'polylines'
 gem 'pry-rails'
 gem 'geocoder'
 gem 'pg'
+gem 'devise_token_auth'
 group :development, :test do
   gem 'byebug'
 end
