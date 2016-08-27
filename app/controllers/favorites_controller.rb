@@ -20,7 +20,7 @@ class FavoritesController < ApplicationController
   # POST /favorites
   # POST /favorites.json
   def create
-    @favorite = Favorite.create(client_id: current_user.id, route_id: params[:route_id])
+    @favorite = Favorite.new(client_id: current_user.id, route_id: params[:route_id])
 
     respond_to do |format|
       if @favorite.save

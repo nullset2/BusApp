@@ -19,6 +19,7 @@ gem 'bootstrap-sass'
 gem 'devise'
 gem 'high_voltage'
 gem 'puma'
+gem 'rack-cors'
 
 group :development do
   gem 'web-console', '~> 2.0'
