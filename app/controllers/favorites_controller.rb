@@ -5,7 +5,7 @@ class FavoritesController < ApplicationController
   # GET /favorites
   # GET /favorites.json
   def index
-    if current_user.favorites
+    if !current_user.favorites.blank?
       return current_user.favorites
     else
       render json: { errors: "No favorites for current user" }, status: :not_found
@@ -20,7 +20,7 @@ class FavoritesController < ApplicationController
   # POST /favorites
   # POST /favorites.json
   def create
-    @favorite = current_user.favorites << Favorite.new(favorite_params)
+    @favorite = current_user.build_favorite(favorite_params)
 
     respond_to do |format|
       if @favorite.save
