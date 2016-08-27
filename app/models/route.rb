@@ -1,4 +1,5 @@
 class Route < ActiveRecord::Base
+  has_many :favorites
   has_many :route_stops
   has_many :driver_routes
   has_many :drivers, through: :driver_routes

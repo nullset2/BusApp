@@ -20,7 +20,7 @@ class FavoritesController < ApplicationController
   # POST /favorites
   # POST /favorites.json
   def create
-    @favorite = current_user.build_favorite(favorite_params)
+    @favorite = Favorite.create(client_id: current_user.id, route_id: params[:route_id])
 
     respond_to do |format|
       if @favorite.save
@@ -28,20 +28,6 @@ class FavoritesController < ApplicationController
         format.json { render :show, status: :created, location: @favorite }
       else
         format.html { render :new }
-        format.json { render json: @favorite.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # PATCH/PUT /favorites/1
-  # PATCH/PUT /favorites/1.json
-  def update
-    respond_to do |format|
-      if @favorite.update(favorite_params)
-        format.html { redirect_to @favorite, notice: 'Favorite was successfully updated.' }
-        format.json { render :show, status: :ok, location: @favorite }
-      else
-        format.html { render :edit }
         format.json { render json: @favorite.errors, status: :unprocessable_entity }
       end
     end
@@ -60,7 +46,6 @@ class FavoritesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_favorite
-      @favorite = Favorite.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
