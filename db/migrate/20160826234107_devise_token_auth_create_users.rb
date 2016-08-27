@@ -3,7 +3,7 @@ class DeviseTokenAuthCreateUsers < ActiveRecord::Migration
     change_table(:users) do |t|
       t.string :provider, :null => false, :default => "email"
       t.string :uid, :null => false, :default => ""
-      t.json :tokens
+      t.string :tokens
     end
 
     add_index :users, [:uid, :provider],     :unique => true
