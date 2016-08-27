@@ -18,6 +18,7 @@ gem 'byebug'
 gem 'bootstrap-sass'
 gem 'devise'
 gem 'high_voltage'
+gem 'puma'
 
 group :development do
   gem 'web-console', '~> 2.0'
