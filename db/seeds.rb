@@ -333,3 +333,6 @@ route_400.drivers << Driver.new(name: "Luis", email: "luis_400@driver.com", pass
 route_214 = Route.find_by(name: 'R-214 Guadalupe Directo')
 route_214.drivers << Driver.new(name: "Jose", email: "jose_214@driver.com", password: "testingpassword", password_confirmation: "testingpassword", role: "Driver")
 route_214.drivers << Driver.new(name: "Hector", email: "hector_214@driver.com", password: "testingpassword", password_confirmation: "testingpassword", role: "Driver")
+
+Client.create(name: "Alfredo", email: "alfredo@test.com", password: "testpass", password_confirmation: "testpass", role: "Client")
+Admin.create(name: "Admin", email: "admin@test.com", password: "testpass", password_confirmation: "testpass", role: "Admin")
