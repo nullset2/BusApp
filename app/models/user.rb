@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   self.inheritance_column = :role
   after_initialize :set_default_role, :if => :new_record?
 
-  def set_default_role(role)
+  def set_default_role
     self.role ||= "Client"
   end
 
