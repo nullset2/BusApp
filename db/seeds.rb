@@ -1,5 +1,6 @@
 Driver.delete_all
 Route.delete_all
+User.delete_all
 
 Route.create(name: 'R-501', polyline: 'apu{Chy`dRNhfBd@lJzAvTct@xFZ`H_C`LsIcCgDpBY[MeJQaIWPGzAiAr@yGrBoB~@IScAu@gBt@cA?IdCgA@BqAeHq@k@c@eGhGcFqFgL_FuAd@e@`@o@I}KeFiMsF~FsQbEaMrBmGbEwLxB{G|O}c@lRqi@RWrL_]hD_Ks@[~A{GpAoGbF`Ah@wIn@Fj@_KaEc@iAq@j@{M~BcKlAiKvAkO|@yJLA|X`B`Db@tCOzA|@JQe@sEzQlAVrBnAPdArIPtNChe@Rb@XeAEm]d@}Fp@_H@oB[iCPc@f@?dFv@|Ch@rCZlDdLtAdG|@pDsBbAlD~IzCjIhBnFd@HBfJWdDC|FzAvH`BfD]b@c@t@kBvExA|@K`BO~BkA`Iu@hD@bC}@hCWvAOjDMpGiQG_H}DqF_Da@Q')
 Route.create(name: 'R-502', polyline: 'eou{Cd{`dR?deBh@nKzAjYy[rwAiZfa@kNkDg@i@c@_z@Sya@GgJK}CKc@UQg@j@aHzBiBv@s@ZaCfABmBmAAIfCoAG@qAyGe@o@o@aGpGcFqFsLeFaC`CcJbD|BqI{EsB{M}FdGuQvHoUhEyLtB{GzO{c@fRoi@Xc@pLs\\hDyJs@WtD}PfF|@d@_Jx@Pb@mJgD[eB{@p@mNvByJhAmK|Ca[XW|XjB~Cf@vCOvA|@x@d@x@PbDzB`H\\r@Tj@l@bAr@x@\\rBpAdAl@|@f@fC|BvBhCpBfDlB|C|A~DpDmB|E~PnAvFj@pAJpBD`I[fEAzFzAvHxBbEa@`@Wh@U~@OvAUdFU|CqAzH~@dFcBl@iAvCSv@EpDO|GqRIaGqDyEmC[G')
@@ -326,13 +327,16 @@ Route.create(name: 'R-527 Alimentadora Misión San Pablo', polyline: 'i{a|ClqhbR
 Route.create(name: 'R-55 Buena Vista - Clinica 6', polyline: 'mrl|CjjkcRKzC_@`Cq@hBuAxAg`@dOgvBlx@jCtZ`@rCxCh_@OZqo@nBYRI\\jHr{@QRwl@zAUu@QwLc@MmCJiJbBeCDmHm@_FR{EdAkDRaAEeFo@{C?_BRgEz@RtJuV[m@iDo@w@kDcBmDwA`@sv@eHaByFE_Ij@iE?yC`KJhGxFjCzBtAfBgHt@{ErCSvAXdArBRzDvHmCWfi@c@|R|Qm@lQ]hx@`BV|R~o@wALIGGeo@zAU}Ruy@cBic@fAd@uRhDnA`D`Bf@f@n@pD`X`@UyJ|Cs@hBUfD?fFl@|@DhDO`FoA`FQfHn@jCEdJcB`CMTDVlMFXPNvm@uALMiHi|@JWNQno@qBZ^lGpu@fIlcARRD[wVa{CYiFuBeX^u@lx@kZnKuCdfAab@xGyCl@o@z@eAp@kBd@{DFgZToZ`@iCpAoCrCeCb\\yJH]_L{KzRqWvTcYf^_e@d@eBfKj@vBIlo@nE~BExGb@hNjAzFp@dEFb@m@vEgZpAkKAcCwC_Qlt@jRTg@Si@{t@mQgXoIcMcEmF\\}Hs@bC`_@hCd^n@dJ_@TeOk@qPcA_SsAkHYmDCg@`@Qp@s@pA}^re@eQdU{SrX~@VlAp@rKhKc\\tJmCtBgBfDe@lCUbs@')
 Route.create(name: 'R-23 Circuito Corto', polyline: 'okb|C`_ucRjZ}WfASvIjH|AlCnAtExCbB`B|CxHhFnBrD~@fDjAxA`D`C~BfFuTp[cI~GuFvJsBtCyEpI_KhNgF|FcGhD{A~AoYxb@uBxByBhDk@hBcBnH_@ZDl@XNb@KpFnArEz@dEl@`Ez@v@^v@~@M~BoFnUwBzCqBdAqGwBmJiC}RaGoSwGeMqCeC}@cIuEkMyDaPkD_GoCoCqBY{@AiArCoF`KoOvNdELVGVgCpDiDvDaClDqE`L~Ad@b@Zx@@`JdBvNjElHvEdUvFzFdCtGnBp\\nIzGjCx@Tl@@bCiBdBqCvFsVTuDiAc@k@AcI_BkHkAeGwAUs@zAoHr@kBnBuCbCmCdYgb@jAkAnDmB`BkA`FyFdKsNNc@Ii@}DuHc@_BeDuD}Aq@gBO{Dj@gB]iBiAcScQcPsUGQFIxc@}`@')
 
+latitude = 25.670312
+longitude = -100.3772177217
+
 route_400 = Route.find_by(name: 'R-400 Fleteros')
-route_400.drivers << Driver.new(name: "Juan", email: "juan_400@driver.com", password: "testingpassword", password_confirmation: "testingpassword", role: "Driver")
-route_400.drivers << Driver.new(name: "Luis", email: "luis_400@driver.com", password: "testingpassword", password_confirmation: "testingpassword", role: "Driver")
+route_400.drivers << Driver.new(name: "Juan", email: "juan_400@driver.com", password: "testingpassword", password_confirmation: "testingpassword", role: "Driver", latitude: latitude, longitude: longitude)
+route_400.drivers << Driver.new(name: "Luis", email: "luis_400@driver.com", password: "testingpassword", password_confirmation: "testingpassword", role: "Driver", latitude: latitude, longitude: longitude)
 
 route_214 = Route.find_by(name: 'R-214 Guadalupe Directo')
-route_214.drivers << Driver.new(name: "Jose", email: "jose_214@driver.com", password: "testingpassword", password_confirmation: "testingpassword", role: "Driver")
-route_214.drivers << Driver.new(name: "Hector", email: "hector_214@driver.com", password: "testingpassword", password_confirmation: "testingpassword", role: "Driver")
+route_214.drivers << Driver.new(name: "Jose", email: "jose_214@driver.com", password: "testingpassword", password_confirmation: "testingpassword", role: "Driver", latitude: latitude, longitude: longitude)
+route_214.drivers << Driver.new(name: "Hector", email: "hector_214@driver.com", password: "testingpassword", password_confirmation: "testingpassword", role: "Driver", latitude: latitude, longitude: longitude)
 
-Client.create(name: "Alfredo", email: "alfredo@test.com", password: "testpass", password_confirmation: "testpass", role: "Client")
-Admin.create(name: "Admin", email: "admin@test.com", password: "testpass", password_confirmation: "testpass", role: "Admin")
+Client.create(name: "Alfredo", email: "alfredo@test.com", password: "testingpassword", password_confirmation: "testingpassword", role: "Client", latitude: latitude, longitude: longitude)
+Admin.create(name: "Admin", email: "admin@test.com", password: "testingpassword", password_confirmation: "testingpassword", role: "Admin",latitude: latitude, longitude: longitude)
