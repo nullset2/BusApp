@@ -1,11 +1,15 @@
 class FavoritesController < ApplicationController
-  before_action :authenticate_use!
+  before_action :authenticate_user!
   before_action :set_favorite, only: [:show, :edit, :update, :destroy]
 
   # GET /favorites
   # GET /favorites.json
   def index
-    @favorites = current_user.favorites || render json: { errors: "No favorites for current user" }, status: :not_found
+    if current_user.favorites
+      return current_user.favorites
+    else
+      render json: { errors: "No favorites for current user" }, status: :not_found
+    end
   end
 
   # GET /favorites/1
