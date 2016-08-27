@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   include DeviseTokenAuth::Concerns::User
-  inheritance_column = :role
+  self.inheritance_column = :role
   after_initialize :set_default_role, :if => :new_record?
 
   def set_default_role(role)
