@@ -1,7 +1,7 @@
 class Favorite < ActiveRecord::Base
-  belongs_to :user
+  belongs_to :client
   belongs_to :route
 
-  validates :user_id, presence: true
+  validates :client_id, presence: true
   validates :routes_id, presence: true
 end

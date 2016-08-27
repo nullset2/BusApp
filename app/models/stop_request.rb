@@ -1,8 +1,8 @@
 class StopRequest < ActiveRecord::Base
   enum status: [:requested, :taken, :ignored]
-  belongs_to :user
-  belongs_to :driver, foreign_key: :driver_id, class_name: "User"
+  belongs_to :client
+  belongs_to :driver
 
-  validates :user_id, presence: true
+  validates :client_id, presence: true
   validates :driver_id, presence: true
 end
