@@ -5,4 +5,8 @@ class Route < ActiveRecord::Base
 
   validates :name, presence: true
   validates :polyline, presence: true
+
+  def decrypted_points
+    Polylines::Decoder.decode_polyline(polyline)
+  end
 end

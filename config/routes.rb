@@ -6,4 +6,6 @@ Rails.application.routes.draw do
   end
 
   root to: 'visitors#index'
+
+  resources :routes
 end
