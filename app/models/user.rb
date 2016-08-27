@@ -17,4 +17,8 @@ class User < ActiveRecord::Base
   validates_format_of :email, with: Devise.email_regexp
   validates :role, presence: true
 
+  def admin?
+    self.role == "Admin"
+  end
+
 end
