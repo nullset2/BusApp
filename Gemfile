@@ -12,6 +12,7 @@ gem 'pry-rails'
 gem 'geocoder'
 gem 'pg'
 gem 'devise_token_auth'
+gem 'rails_12factor'
 group :development, :test do
   gem 'byebug'
 end
